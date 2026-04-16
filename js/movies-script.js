@@ -4,7 +4,7 @@
 // Hvert objekt skal have følgende properties: id, title, genre, year, duration, img, url
 
 
-const exhibitions = [
+const movies = [
   {
     id: 1,
     titel: "Inception",
