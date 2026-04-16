@@ -1,7 +1,16 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+/*Opgave 12 – Grundlæggende CSS styling - Siden skal mindst have:
+- en centreret overskrift
+- luft omkring indholdet
+- filmkort med kant eller baggrund
+- ensartet afstand mellem elementer
+- billeder i en passende størrelse
+
+Du må gerne bruge følgende CSS properties:
+margin, padding, border, border-radius, width, height, max-width */
+
+figure img {
+  width: 100%;
+  height: 100%;
 }
 
 body {
@@ -10,7 +19,42 @@ body {
   align-items: center;
 }
 
-figure img {
-  width: 30%;
-  height: 30%;
+h1 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+#movies-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+article {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  width: 250px;
+}
+
+article h2 {
+  margin-top: 0;
+}
+
+figure {
+  margin: 20px 0 0 0;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+figcaption {
+  margin-top: 10px;
+  text-align: left;
+  font-weight: bold;
 }
