@@ -2,8 +2,6 @@
 
 // Opgave 3 – Opret datastrukturen movies med de første 5 film. 
 // Hvert objekt skal have følgende properties: id, title, genre, year, duration, img, url
-
-
 const movies = [
   {
     id: 1,
@@ -53,5 +51,32 @@ const movies = [
 ];
 
 
+// Opgave 4 – Opret variablen moviesContainer
 // Her opretter jeg en variabel som henter eller peger på id="exhibition-container" atribuetten over i html
 const moviesContainer = document.querySelector("#movies-container");
+
+
+// Opgave 5 – Opret funktionen displayMovies(movieList)
+// Opgave 6 – Tøm containeren før filmene vises
+// Opgave 7 – Brug forEach() til at gennemløbe filmene
+// Opgave 8 – Vis film med innerHTML
+function displayMovies(movieList) {
+  moviesContainer.innerHTML += "";
+  movies.forEach((item) => {
+    // her opretter jeg en html struktur, hvor der skal være data fra min js-datastruktur
+    moviesContainer.innerHTML += `
+    <article>
+        <h2>${titel}</h2>
+        <p>${Genre}</p>
+        <p>${År}</p>
+        <p>${Varighed}</p>
+    </article>
+    <figure>
+    <!-- Skal benyttes i opgave 9 -->
+    </figure>
+`;
+
+
+    </article>`;
+  });
+}
