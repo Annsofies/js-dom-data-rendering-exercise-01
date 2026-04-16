@@ -1,4 +1,4 @@
-/*Opgave 12 – Grundlæggende CSS styling - Siden skal mindst have:
+/* Opgave 12 – Grundlæggende CSS styling - Siden skal mindst have:
 - en centreret overskrift
 - luft omkring indholdet
 - filmkort med kant eller baggrund
@@ -24,12 +24,15 @@ h1 {
   margin-bottom: 40px;
 }
 
+/* Opgave 13 – Layout med CSS Flexbox */
 #movies-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
   justify-content: center;
+  align-items: stretch;
+  gap: 24px;
 }
+
 
 article {
   background-color: white;
