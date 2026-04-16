@@ -5,7 +5,7 @@
 const movies = [
   {
     id: 1,
-    titel: "Inception",
+    title: "Inception",
     genre: "science-fiction",
     year: 2010,
     duration: 2.28,
@@ -14,7 +14,7 @@ const movies = [
   },
   {
     id: 2,
-    titel: "The Dark Knight",
+    title: "The Dark Knight",
     genre: "action",
     year: 2008,
     duration: 2.32,
@@ -23,7 +23,7 @@ const movies = [
   },
   {
     id: 3,
-    titel: "Forrest Gump",
+    title: "Forrest Gump",
     genre: "drama",
     year: 1994,
     duration: 2.22,
@@ -32,7 +32,7 @@ const movies = [
   },
   {
     id: 4,
-    titel: "Superbad",
+    title: "Superbad",
     genre: "comedy",
     year: 2007,
     duration: 1.53,
@@ -41,7 +41,7 @@ const movies = [
   },
   {
     id: 5,
-    titel: "It",
+    title: "It",
     genre: "horror",
     year: 2017,
     duration: 2.15,
@@ -58,20 +58,28 @@ const moviesContainer = document.querySelector("#movies-container");
 // Opgave 6 – Tøm containeren før filmene vises
 // Opgave 7 – Brug forEach() til at gennemløbe filmene
 // Opgave 8 – Vis film med innerHTML
+// Opgave 9 – Tilføj billede og link
+
 function displayMovies(movieList) {
   moviesContainer.innerHTML = "";
-  movies.forEach((item) => {
+  movieList.forEach((item) => {
     // her opretter jeg en html struktur, hvor der skal være data fra min js-datastruktur
     moviesContainer.innerHTML += `
     <article>
-        <h2>${item.titel}</h2>
+        <h2>${item.title}</h2>
         <p>Genre: ${item.genre}</p>
         <p>År: ${item.year}</p>
         <p>Varighed: ${item.duration}</p>
-    </article>
-    <figure>
-    <!-- Skal benyttes i opgave 9 -->
-    </figure>
-    </article>`;
+    
+        <figure>
+            <a href="${item.url}" target="_blank" rel="noopener noreferrer">
+                <img src="${item.img}" alt= "${item.title}">
+            </a>
+            <figcaption>${item.title}</figcaption>
+        </figure>
+   </article>`;
   });
 }
+
+// Opgave 10 – Kald funktionen med filmdata
+displayMovies(movies);
