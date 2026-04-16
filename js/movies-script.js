@@ -51,3 +51,7 @@ const movies = [
     url: <a href="https://www.imdb.com/title/tt1396484/">https://www.imdb.com/title/tt1396484/</a>,
   }
 ];
+
+
+// Her opretter jeg en variabel som henter eller peger på id="exhibition-container" atribuetten over i html
+const moviesContainer = document.querySelector("#movies-container");
