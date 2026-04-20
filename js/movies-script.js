@@ -105,26 +105,39 @@ const moviesContainer = document.querySelector("#movies-container");
 // Opgave 7 – Brug forEach() til at gennemløbe filmene
 // Opgave 8 – Vis film med innerHTML
 // Opgave 9 – Tilføj billede og link
+// Opgave 3.6 – Brug map() til at gennemløbe filmene
+// Opgave 3.7 – Returnér HTML inde i map()
+// Opgave 3.8 – Erstat pladsholderne med data fra movie
+// Opgave 3.9 – Saml HTML-strengene med join("")
+// Opgave 3.10 – Indsæt den færdige HTML i DOM’en
+// Opgave 3.11 – Kald funktionen med filmdata
+// Opgave 3.12 – Tilføj de resterende film fra movies.txt 
 
 function displayMovies(movieList) {
-  moviesContainer.innerHTML = "";
-  movieList.forEach((item) => {
-    // her opretter jeg en html struktur, hvor der skal være data fra min js-datastruktur
-    moviesContainer.innerHTML += `
+  // før: moviesContainer.innerHTML = "";
+  // før: movieList.forEach((item) => {
+  // her opretter jeg en html struktur, hvor der skal være data fra min js-datastruktur
+  // før: moviesContainer.innerHTML += `
+  const html = movieList
+    .map((movie) => {
+      return `
     <article>
-        <h2>${item.title}</h2>
-        <p>Genre: ${item.genre}</p>
-        <p>År: ${item.year}</p>
-        <p>Varighed: ${item.duration}</p>
-    
+        <h2>${movie.title}</h2>
+        <p>Genre: ${movie.genre}</p>
+        <p>År: ${movie.year}</p>
+        <p>Varighed: ${movie.duration}</p>
+
         <figure>
-            <a href="${item.url}" target="_blank" rel="noopener noreferrer">
-                <img src="${item.img}" alt= "${item.title}">
+            <a href="${movie.url}" target="_blank" rel="noopener noreferrer">
+                <img src="${movie.img}" alt= "${movie.title}">
             </a>
-            <figcaption>${item.title}</figcaption>
+            <figcaption>${movie.title}</figcaption>
         </figure>
    </article>`;
-  });
+    })
+    .join("");
+
+  moviesContainer.innerHTML = html;
 }
 
 // Opgave 10 – Kald funktionen med filmdata
